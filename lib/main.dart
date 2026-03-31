@@ -54,13 +54,25 @@ class MyHomePage extends StatefulWidget {
 }
 
 class MyTextWidget extends StatelessWidget {
-  const MyTextWidget({Key?key}): super(key: key);
+  const MyTextWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Text(
       "Nama saya Dina Mei Lestari, sedang belajar pemrograman mobile",
       style: TextStyle(color: Colors.red, fontSize: 14), textAlign: TextAlign.center,);
+  }
+}
+
+class MyImageWidget extends StatelessWidget {
+  const MyImageWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Image(
+      image: AssetImage("image/logo_polinema.png"), 
+      width: 200,
+    );
   }
 }
 
@@ -102,7 +114,8 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center, 
           children: [
             // Panggil widget baru (nama saya)
-            const MyTextWidget(), 
+            const MyTextWidget(),
+            const MyImageWidget(),
             
             const SizedBox(height: 20), // Kasih jarak sedikit biar rapi
             
