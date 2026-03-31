@@ -53,6 +53,17 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
+class MyTextWidget extends StatelessWidget {
+  const MyTextWidget({Key?key}): super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      "Nama saya Dina Mei Lestari, sedang belajar pemrograman mobile",
+      style: TextStyle(color: Colors.red, fontSize: 14), textAlign: TextAlign.center,);
+  }
+}
+
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
@@ -86,24 +97,15 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
         child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: .center,
+         
+          mainAxisAlignment: MainAxisAlignment.center, 
           children: [
+            // Panggil widget baru (nama saya)
+            const MyTextWidget(), 
+            
+            const SizedBox(height: 20), // Kasih jarak sedikit biar rapi
+            
             const Text('You have pushed the button this many times:'),
             Text(
               '$_counter',
